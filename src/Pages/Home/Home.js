@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Carosel from "./Carosel";
 import LimFoodCard from "./LimFoodCard";
 import StorySection from "./StorySection";
@@ -31,6 +32,9 @@ const Home = () => {
             <LimFoodCard key={limfood._id} limfood={limfood}></LimFoodCard>
           ))}
         </div>
+        <Link className="btn px-10 text-2xl  text-orange-600  hover:text-orange-700 hover:bg-base-300 font-bold btn-ghost btn-active normal-case border-none italic mb-5">
+          See All
+        </Link>
       </div>
       <StorySection></StorySection>
     </div>
