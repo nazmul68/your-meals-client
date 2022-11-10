@@ -15,7 +15,7 @@ const StorySection = () => {
         <h2 className="text-3xl font-bold text-orange-600 mb-5 hover:text-orange-800 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
           OUR STORY
         </h2>
-        <p className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
+        <p>
           Food is an essential part of our lives. But today, many of us struggle
           with it for a variety of reasons. Our mission is to serve a fresh meal
           to people every day. YourMeals was started the journey since 2021 when
