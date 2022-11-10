@@ -1,9 +1,12 @@
 import React from "react";
+import Carosel from "./Carosel";
+import StorySection from "./StorySection";
 
 const Home = () => {
   return (
     <div>
-      <h1>thsi is home page</h1>
+      <Carosel></Carosel>
+      <StorySection></StorySection>
     </div>
   );
 };

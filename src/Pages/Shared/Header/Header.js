@@ -4,15 +4,28 @@ import logo from "../../../assets/logo.png";
 
 const Header = () => {
   const menuItems = (
-    <li className="font-semibold mx-2">
-      <Link className="btn btn-ghost normal-case" to="/home">
-        Home
-      </Link>
-    </li>
+    <>
+      <li className="text-2xl mx-1">
+        <Link
+          className="btn btn-ghost normal-case hover:text-orange-600 font-bold "
+          to="/"
+        >
+          Home
+        </Link>
+      </li>
+      <li className="font-bold mx-1">
+        <Link
+          className="btn btn-ghost normal-case hover:text-orange-600 font-bold "
+          to="blog"
+        >
+          Blog
+        </Link>
+      </li>
+    </>
   );
 
   return (
-    <div>
+    <div className="container mx-auto">
       <div className="navbar h-24 bg-base-100">
         <div className="navbar-start">
           <div className="dropdown">
@@ -40,7 +53,7 @@ const Header = () => {
             </ul>
           </div>
           <Link to={"/"} className="normal-case text-xl mx-4">
-            <img className=" h-8 md:h-12" src={logo} alt="logo" />
+            <img className="h-8 md:h-12" src={logo} alt="logo" />
           </Link>
           <p className="text-2xl font-bold text-orange-500">YourMeals</p>
         </div>

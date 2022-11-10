@@ -1,4 +1,5 @@
 import Main from "../../../Layouts/Main";
+import Blog from "../../Blog/Blog";
 import Home from "../../Home/Home";
 import Login from "../../Login/Login";
 import Signup from "../../Signup/Signup";
@@ -11,7 +12,7 @@ const router = createBrowserRouter([
     element: <Main></Main>,
     children: [
       {
-        path: "/home",
+        path: "/",
         element: <Home></Home>,
       },
       {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
       {
         path: "/signup",
         element: <Signup></Signup>,
+      },
+      {
+        path: "/blog",
+        element: <Blog></Blog>,
       },
     ],
   },
