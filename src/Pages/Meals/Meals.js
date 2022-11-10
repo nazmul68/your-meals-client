@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import SingleMeal from "../SingleMeal/SingleMeal";
 
 const Meals = () => {
   const [meals, setMeals] = useState([]);
@@ -9,8 +10,10 @@ const Meals = () => {
       .then((data) => setMeals(data));
   }, []);
   return (
-    <div>
-      <h2>{meals.length}</h2>
+    <div className="grid md:grid-cols-3 container mx-auto gap-3 my-10">
+      {meals.map((meal) => (
+        <SingleMeal key={meal._id} meal={meal}></SingleMeal>
+      ))}
     </div>
   );
 };
