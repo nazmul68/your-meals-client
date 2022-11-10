@@ -2,8 +2,8 @@ import React from "react";
 import { PhotoProvider, PhotoView } from "react-photo-view";
 import "react-photo-view/dist/react-photo-view.css";
 
-const LimFoodCard = ({ limfood }) => {
-  const { name, price, quantity, rating, image, description } = limfood;
+const LimMealCard = ({ limMeal }) => {
+  const { name, price, quantity, rating, image, description } = limMeal;
   return (
     <div className="card w-96 mx-auto shadow-xl transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-110 duration-300 mb-5">
       <figure>
@@ -34,4 +34,4 @@ const LimFoodCard = ({ limfood }) => {
   );
 };
 
-export default LimFoodCard;
+export default LimMealCard;

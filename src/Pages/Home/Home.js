@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Carosel from "./Carosel";
-import LimFoodCard from "./LimFoodCard";
+import LimFoodCard from "./LimMealCard";
 import StorySection from "./StorySection";
 
 const Home = () => {
   const [limFoods, setLimFoods] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/limFoods`)
+    fetch(`http://localhost:5000/limMeals`)
       .then((res) => res.json())
       .then((data) => {
         // console.log(data)
@@ -28,8 +28,8 @@ const Home = () => {
         </h2>
 
         <div className="grid md:grid-cols-3 container mx-auto gap-3 my-10">
-          {limFoods.map((limfood) => (
-            <LimFoodCard key={limfood._id} limfood={limfood}></LimFoodCard>
+          {limFoods.map((limMeal) => (
+            <LimFoodCard key={limMeal._id} limMeal={limMeal}></LimFoodCard>
           ))}
         </div>
         <Link className="btn px-10 text-2xl  text-orange-600  hover:text-orange-700 hover:bg-base-300 font-bold btn-ghost btn-active normal-case border-none italic mb-5">
