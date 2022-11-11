@@ -23,6 +23,7 @@ const Login = () => {
         console.log(user);
         form.reset();
         setError("");
+        form.reset();
         navigate(from, { replace: true });
       })
       .catch((err) => {

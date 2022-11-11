@@ -1,8 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../../assets/logo.png";
+import { AuthContext } from "../../../Contexts/AuthProvider";
 
 const Header = () => {
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {
+        console.log("log out successful");
+      })
+      .catch((err) => console.error(err));
+  };
+
   const menuItems = (
     <>
       <li className="text-2xl mx-1">
@@ -36,6 +47,14 @@ const Header = () => {
         >
           Sign up
         </Link>
+      </li>
+      <li className="text-2xl mx-1">
+        <button
+          onClick={handleLogOut}
+          className="btn btn-ghost normal-case hover:text-orange-600 font-bold "
+        >
+          Log out
+        </button>
       </li>
       <li className="font-bold mx-1">
         <Link
