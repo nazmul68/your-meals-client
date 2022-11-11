@@ -18,12 +18,15 @@ const router = createBrowserRouter([
         element: <Home></Home>,
       },
       {
-        path: "/meals",
+        path: "/allMeals",
         element: <Meals></Meals>,
       },
       {
-        path: "/meals/:id",
+        path: "/allMeals/:id",
         element: <SingleMeal></SingleMeal>,
+        loader: async ({ params }) => {
+          return fetch(`http://localhost:5000/allMeals/${params.id}`);
+        },
       },
       {
         path: "/login",

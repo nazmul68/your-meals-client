@@ -32,7 +32,10 @@ const Home = () => {
             <LimFoodCard key={limMeal._id} limMeal={limMeal}></LimFoodCard>
           ))}
         </div>
-        <Link className="btn px-10 text-2xl  text-orange-600  hover:text-orange-700 hover:bg-base-300 font-bold btn-ghost btn-active normal-case border-none italic mb-5">
+        <Link
+          to={`/allMeals`}
+          className="btn px-10 text-2xl  text-orange-600  hover:text-orange-700 hover:bg-base-300 font-bold btn-ghost btn-active normal-case border-none italic mb-5"
+        >
           See All
         </Link>
       </div>
