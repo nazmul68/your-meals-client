@@ -8,7 +8,7 @@ const StorySection = () => {
         <img
           src={img}
           alt=""
-          className="rounded-tl-3xl rounded-br-3xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
+          className="rounded-tl-3xl rounded-br-3xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 "
         />
       </div>
       <div className="details md:w-1/2 my-5">

@@ -40,6 +40,7 @@ const Login = () => {
         const user = res.user;
         console.log(user);
         setError("");
+        navigate(from, { replace: true });
       })
       .catch((err) => setError(err.message));
   };

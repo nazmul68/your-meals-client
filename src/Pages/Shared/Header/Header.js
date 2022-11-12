@@ -1,10 +1,13 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
+import { FaUser } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import logo from "../../../assets/logo.png";
 import { AuthContext } from "../../../Contexts/AuthProvider";
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
+  const userImg = user?.photoURL;
+  console.log(userImg);
 
   const handleLogOut = () => {
     logOut()
@@ -35,26 +38,18 @@ const Header = () => {
       <li className="text-2xl mx-1">
         <Link
           className="btn btn-ghost normal-case hover:text-orange-600 font-bold "
-          to="/login"
+          to="/addMeals"
         >
-          Login
+          AddMeal
         </Link>
       </li>
       <li className="text-2xl mx-1">
         <Link
           className="btn btn-ghost normal-case hover:text-orange-600 font-bold "
-          to="/signup"
+          to="/myReviews"
         >
-          Sign up
+          MyReviews
         </Link>
-      </li>
-      <li className="text-2xl mx-1">
-        <button
-          onClick={handleLogOut}
-          className="btn btn-ghost normal-case hover:text-orange-600 font-bold "
-        >
-          Log out
-        </button>
       </li>
       <li className="font-bold mx-1">
         <Link
@@ -64,6 +59,37 @@ const Header = () => {
           Blog
         </Link>
       </li>
+      {user ? (
+        <>
+          <li className="text-2xl mx-1">
+            <button
+              onClick={handleLogOut}
+              className="btn btn-ghost normal-case hover:text-orange-600 font-bold "
+            >
+              Log out
+            </button>
+          </li>
+        </>
+      ) : (
+        <>
+          <li className="text-2xl mx-1">
+            <Link
+              className="btn btn-ghost normal-case hover:text-orange-600 font-bold "
+              to="/login"
+            >
+              Login
+            </Link>
+          </li>
+          <li className="text-2xl mx-1">
+            <Link
+              className="btn btn-ghost normal-case hover:text-orange-600 font-bold "
+              to="/signup"
+            >
+              Sign up
+            </Link>
+          </li>
+        </>
+      )}
     </>
   );
 
@@ -104,12 +130,15 @@ const Header = () => {
           <ul className="menu menu-horizontal p-0">{menuItems}</ul>
         </div>
         <div className="navbar-end">
-          <button
-            className=" mr-5 font-bold bg-warning px-3 py-2 rounded hover:bg-black"
-            style={{ color: "#ffff" }}
-          >
-            Appointment
-          </button>
+          {user?.uid ? (
+            <div className="w-8">
+              <img src={userImg} alt="user" className="rounded-full" />
+            </div>
+          ) : (
+            <div className="w-10 rounded-full">
+              <FaUser className="text-2xl font-bold text-gray-400"></FaUser>
+            </div>
+          )}
         </div>
       </div>
     </div>

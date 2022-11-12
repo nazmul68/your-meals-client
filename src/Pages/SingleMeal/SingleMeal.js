@@ -1,10 +1,10 @@
 import React from "react";
 import { PhotoProvider, PhotoView } from "react-photo-view";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const SingleMeal = ({ meal }) => {
   const { _id, name, price, quantity, rating, image, description } = meal;
-  console.log(_id);
+  //   console.log(_id);
   const navigate = useNavigate();
   const handleNavigate = (_id) => {
     navigate(`/allMeals/${_id}`);
@@ -24,7 +24,7 @@ const SingleMeal = ({ meal }) => {
         <div className="flex">
           <p className="text-left font-semibold">price: {price} tk</p>
           <p className="text-left font-semibold">quantity: {quantity}</p>
-          <p className="text-left font-semibold">ratings: {rating}</p>
+          <p className="text-left font-semibold">ratings: {rating} </p>
         </div>
 
         <p className="text-left">{description.slice(0, 100) + "..."}</p>
