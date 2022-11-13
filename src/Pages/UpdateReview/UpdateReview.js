@@ -67,6 +67,7 @@ const UpdateReview = () => {
               readOnly
             />
           </div>
+
           <div className=" w-4/5 mx-auto">
             <textarea
               className="textarea textarea-success w-full my-5 py-10"

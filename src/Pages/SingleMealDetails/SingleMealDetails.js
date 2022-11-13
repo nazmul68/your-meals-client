@@ -1,5 +1,5 @@
 import { useLoaderData } from "react-router-dom";
-
+import notFoundImg from "../../assets/notFoundImg.jpg";
 import AddReveiw from "../AddReview/AddReveiw";
 
 const SingleMealDetails = () => {
@@ -11,7 +11,11 @@ const SingleMealDetails = () => {
     <div>
       <div className="card w-4/5 mx-auto bg-base-200 shadow-xl mb-20">
         <figure className="px-10 pt-10">
-          <img src={image} alt="Shoes" className="rounded-xl w-11/12" />
+          <img
+            src={image ? image : notFoundImg}
+            alt="Shoes"
+            className="rounded-xl w-11/12"
+          />
         </figure>
         <div className="card-body items-center text-center">
           <div className="w-11/12">

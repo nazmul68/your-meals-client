@@ -35,22 +35,28 @@ const Header = () => {
           Meals
         </Link>
       </li>
-      <li className="text-2xl mx-1">
-        <Link
-          className="btn btn-ghost normal-case hover:text-orange-600 font-bold "
-          to="/addMeals"
-        >
-          AddMeal
-        </Link>
-      </li>
-      <li className="text-2xl mx-1">
-        <Link
-          className="btn btn-ghost normal-case hover:text-orange-600 font-bold "
-          to="/myReviews"
-        >
-          MyReviews
-        </Link>
-      </li>
+      {user ? (
+        <>
+          <li className="text-2xl mx-1">
+            <Link
+              className="btn btn-ghost normal-case hover:text-orange-600 font-bold "
+              to="/addMeals"
+            >
+              AddMeal
+            </Link>
+          </li>
+          <li className="text-2xl mx-1">
+            <Link
+              className="btn btn-ghost normal-case hover:text-orange-600 font-bold "
+              to="/myReviews"
+            >
+              MyReviews
+            </Link>
+          </li>
+        </>
+      ) : (
+        <></>
+      )}
       <li className="font-bold mx-1">
         <Link
           className="btn btn-ghost normal-case hover:text-orange-600 font-bold "

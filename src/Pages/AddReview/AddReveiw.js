@@ -8,6 +8,7 @@ const AddReveiw = ({ meal }) => {
   const { user } = useContext(AuthContext);
   const userImg = user?.photoURL;
   const [reviewsById, setReviewsById] = useState([]);
+  const [control, setControl] = useState(false);
 
   const { _id, name, image } = meal;
 
@@ -33,7 +34,7 @@ const AddReveiw = ({ meal }) => {
       review,
     };
 
-    setReviewsById([reviews, ...reviewsById]);
+    // setReviewsById([reviews, ...reviewsById]); // use useState
 
     // POST review
     fetch("http://localhost:5000/reviews", {
@@ -48,10 +49,11 @@ const AddReveiw = ({ meal }) => {
         form.reset();
         // console.log( data);
         if (data.acknowledged) {
+          setControl(!control);
           Swal.fire({
             position: "center",
             icon: "success",
-            title: "Your review has submitted successfully",
+            title: "Thanks for your feedback",
             showConfirmButton: false,
             timer: 1500,
           });
@@ -71,7 +73,7 @@ const AddReveiw = ({ meal }) => {
       .catch((e) => {
         console.log(e);
       });
-  }, [_id]);
+  }, [control]);
 
   return (
     <div>
