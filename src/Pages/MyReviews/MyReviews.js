@@ -1,56 +1,89 @@
+import { data } from "autoprefixer";
 import React, { useContext, useEffect, useState } from "react";
+import Swal from "sweetalert2";
 import { AuthContext } from "../../Contexts/AuthProvider";
+import MyReviewRow from "./MyReviewRow";
 
 const MyReviews = () => {
   const { user } = useContext(AuthContext);
   const [myReviews, setMyReviews] = useState([]);
-  console.log(myReviews);
-  const { name, review, image, postDay } = myReviews;
-  console.log(name, review, image, postDay);
+  const [loader, setLoader] = useState(true);
+  //   console.log(myReviews);
 
   useEffect(() => {
     fetch(`http://localhost:5000/myReviews?email=${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         setMyReviews(data);
+        setLoader(false);
       })
-      .catch((e) => {
-        console.log(e);
+      .catch((err) => {
+        console.log(err);
       });
   }, [user?.email]);
-  return (
-    <div>
-      {/* <div className="my-10">
-        <div className="overflow-x-auto shadow rounded-md py-3  w-4/6 mx-auto transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-110 duration-300 ">
-          <table className="table w-full">
-            <tbody>
-              <tr>
-                <td>
-                  <div className="flex items-center space-x-3">
-                    <div className="avatar">
-                      <div className="rounded-full w-12">
-                        <img src={image} alt="userimg" />
-                      </div>
-                    </div>
-                    <div>
-                      <div>{name}</div>
-                    </div>
-                  </div>
-                </td>
-                <td>
-                  <div className="font-bold">{name}</div>
 
-                  <p className="">{review}</p>
-                </td>
-                <td>
-                  <div className="w-32 flex items-center rounded"></div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+  const handleDeleteReview = (id) => {
+    const procced = window.confirm("Are you sure to delete ?");
+    console.log(alert);
+    if (procced) {
+      fetch(`http://localhost:5000/myReviews/${id}`, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          //   console.log(data);
+          if (data.deletedCount > 0) {
+            Swal.fire({
+              position: "center",
+              icon: "success",
+              title: "Your review has been deleted",
+              showConfirmButton: true,
+              timer: 1500,
+            });
+            const remaining = myReviews.filter((rev) => rev._id !== id);
+            setMyReviews(remaining);
+          }
+        });
+    }
+  };
+
+  //   const handleUpdateReview = (id) =>{
+  //     fetch(`http://localhost:5000/myReviews/${id}`{
+  //         method: 'PATCH',
+  //         headers:{
+  //             'content-type': 'application.json'
+  //         }
+  //         // body: JSON.stringify()
+  //     })
+  //   }
+
+  //
+
+  if (loader) {
+    return "";
+  } else if (myReviews.length) {
+    return (
+      <div>
+        <div className="text-center font-bold text-orange-600 text-3xl">
+          <h2>All Your Reviews Here!</h2>
         </div>
-      </div> */}
+        {myReviews.map((myReview) => (
+          <MyReviewRow
+            key={myReview._id}
+            myReview={myReview}
+            handleDeleteReview={handleDeleteReview}
+          ></MyReviewRow>
+        ))}
+      </div>
+    );
+  }
+  return (
+    <div
+      className="flex justify-center items-center font-bold text-orange-600 text-4xl mb-16"
+      style={{ height: "50vh" }}
+    >
+      <h2>No reviews were added!</h2>
     </div>
   );
 };

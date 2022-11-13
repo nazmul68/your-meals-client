@@ -1,6 +1,4 @@
-import { data } from "autoprefixer";
 import React, { useContext, useEffect, useState } from "react";
-import { FaUser } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../Contexts/AuthProvider";
@@ -35,6 +33,9 @@ const AddReveiw = ({ meal }) => {
       review,
     };
 
+    setReviewsById([reviews, ...reviewsById]);
+
+    // POST review
     fetch("http://localhost:5000/reviews", {
       method: "POST",
       headers: {
@@ -45,7 +46,7 @@ const AddReveiw = ({ meal }) => {
       .then((res) => res.json())
       .then((data) => {
         form.reset();
-        console.log(data);
+        // console.log( data);
         if (data.acknowledged) {
           Swal.fire({
             position: "center",
@@ -85,7 +86,7 @@ const AddReveiw = ({ meal }) => {
             </div>
             <div className="md:px-40">
               <div className="w-8">
-                <img src={userImg} alt="user" className="rounded-full" />
+                <img src={userImg} alt="user" className="mask mask-decagon" />
               </div>
             </div>
           </div>
@@ -122,7 +123,7 @@ const AddReveiw = ({ meal }) => {
               <input
                 type="submit"
                 value="submit"
-                className="bg-warning cursor-pointer font-semibold text-white p-3 rounded w-full my-5 "
+                className="bg-warning hover:bg-yellow-500 cursor-pointer font-semibold text-white p-3 rounded w-full my-5 "
               />
             </div>
           </form>
@@ -138,7 +139,7 @@ const AddReveiw = ({ meal }) => {
         </div>
       )}
 
-      {/* specific meal reviews by meal Id  */}
+      {/* specific meal reviews by mealId  */}
       {reviewsById.map((reviewById) => (
         <ReviewsByMealId
           key={reviewById._id}
