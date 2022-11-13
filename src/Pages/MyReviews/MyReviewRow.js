@@ -24,7 +24,7 @@ const MyReviewRow = ({ myReview, handleDeleteReview }) => {
                 </div>
               </td>
               <td>
-                <div className="font-semibold">{review}</div>
+                <div className="font-semibold ">{review}</div>
 
                 <p className="">{postDay}</p>
               </td>

@@ -1,9 +1,12 @@
-import { useLoaderData } from "react-router-dom";
+import toast, { Toaster } from "react-hot-toast";
+import { useLoaderData, useNavigate } from "react-router-dom";
 
 const UpdateReview = () => {
   const storedReviews = useLoaderData();
   const storedReview = storedReviews.find((review) => review);
   const { _id, name, review, image } = storedReview;
+
+  const navigate = useNavigate();
 
   const handleUpdateUser = (event) => {
     event.preventDefault();
@@ -23,13 +26,17 @@ const UpdateReview = () => {
       .then((data) => {
         // console.log(data);
         if (data.modifiedCount > 0) {
-          alert("updated user");
+          toast.success("Review Updated Successfully");
+          setTimeout(() => {
+            navigate(`/myReviews`);
+          }, 1000);
         }
       });
   };
 
   return (
     <div>
+      <Toaster></Toaster>
       <div>
         <div className="text-center font-bold text-orange-600 text-4xl">
           <h2>Please Update Your Review</h2>
