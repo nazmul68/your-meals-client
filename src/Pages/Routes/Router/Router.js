@@ -8,6 +8,7 @@ import MyReviews from "../../MyReviews/MyReviews";
 import Signup from "../../Signup/Signup";
 import SingleMeal from "../../SingleMeal/SingleMeal";
 import SingleMealDetails from "../../SingleMealDetails/SingleMealDetails";
+import UpdateReview from "../../UpdateReview/UpdateReview";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 const { createBrowserRouter } = require("react-router-dom");
@@ -47,6 +48,13 @@ const router = createBrowserRouter([
             <MyReviews></MyReviews>
           </PrivateRoute>
         ),
+      },
+      {
+        path: "/update/:id",
+        element: <UpdateReview></UpdateReview>,
+        loader: async ({ params }) => {
+          return fetch(`http://localhost:5000/myReviews/${params.id}`);
+        },
       },
       {
         path: "/login",

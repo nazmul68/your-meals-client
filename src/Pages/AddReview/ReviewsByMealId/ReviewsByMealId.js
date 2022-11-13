@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
+import { AuthContext } from "../../../Contexts/AuthProvider";
 
 const ReviewsByMealId = ({ reviewById }) => {
   //   console.log(reviewById);
+  const { user } = useContext(AuthContext);
   const { mealId, image, name, userImage, review, userEmail } = reviewById;
 
   return (
@@ -13,8 +15,16 @@ const ReviewsByMealId = ({ reviewById }) => {
               <tbody>
                 <tr>
                   <td>
-                    <div className="flex items-center mask mask-diamond  w-32">
-                      <img src={image} alt="item img" className="" />
+                    <div className="flex items-center space-x-3">
+                      <div className="avatar">
+                        <div className="mask mask-decagon w-12">
+                          <img src={userImage} alt="userimg" />
+                        </div>
+                      </div>
+                      <div>
+                        <div className="font-bold">{user?.displayName}</div>
+                        <div>{userEmail}</div>
+                      </div>
                     </div>
                   </td>
 
@@ -24,15 +34,8 @@ const ReviewsByMealId = ({ reviewById }) => {
                     <p className="">{review}</p>
                   </td>
                   <td>
-                    <div className="flex items-center space-x-3">
-                      <div>
-                        <div>{userEmail}</div>
-                      </div>
-                      <div className="avatar">
-                        <div className="mask mask-decagon w-12">
-                          <img src={userImage} alt="userimg" />
-                        </div>
-                      </div>
+                    <div className="flex items-center mask mask-diamond  w-32">
+                      <img src={image} alt="item img" className="" />
                     </div>
                   </td>
                 </tr>

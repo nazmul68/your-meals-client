@@ -109,7 +109,7 @@ const AddReveiw = ({ meal }) => {
                 placeholder="user photoURL"
                 name="photoURL"
                 className="input input-bordered input-accent w-full max-w-xs mx-auto m-5"
-                defaultValue={user?.photoURL}
+                defaultValue={image}
                 required
               />
             </div>

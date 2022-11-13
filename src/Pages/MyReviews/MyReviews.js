@@ -48,18 +48,6 @@ const MyReviews = () => {
     }
   };
 
-  //   const handleUpdateReview = (id) =>{
-  //     fetch(`http://localhost:5000/myReviews/${id}`{
-  //         method: 'PATCH',
-  //         headers:{
-  //             'content-type': 'application.json'
-  //         }
-  //         // body: JSON.stringify()
-  //     })
-  //   }
-
-  //
-
   if (loader) {
     return "";
   } else if (myReviews.length) {

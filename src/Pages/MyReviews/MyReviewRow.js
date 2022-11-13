@@ -1,5 +1,6 @@
 import React from "react";
 import { FaEdit, FaWindowClose } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const MyReviewRow = ({ myReview, handleDeleteReview }) => {
   const { _id, name, review, image, postDay } = myReview;
@@ -28,9 +29,12 @@ const MyReviewRow = ({ myReview, handleDeleteReview }) => {
                 <p className="">{postDay}</p>
               </td>
               <td>
-                <button className="w-32 flex items-center rounded">
+                <Link
+                  to={`/update/${_id}`}
+                  className="w-32 flex items-center rounded"
+                >
                   <FaEdit className="font-bold text-3xl text-orange-900"></FaEdit>
-                </button>
+                </Link>
               </td>
               <td>
                 <button onClick={() => handleDeleteReview(_id)} className="">
