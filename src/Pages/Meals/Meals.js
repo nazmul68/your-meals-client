@@ -7,7 +7,7 @@ const Meals = () => {
   const [meals, setMeals] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/allMeals`)
+    fetch(`https://assignment-11-review-service-server.vercel.app/allMeals`)
       .then((res) => res.json())
       .then((data) => setMeals(data));
   }, []);

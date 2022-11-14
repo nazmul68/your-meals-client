@@ -1,4 +1,3 @@
-import { data } from "autoprefixer";
 import React, { useContext, useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import Swal from "sweetalert2";
@@ -12,7 +11,9 @@ const MyReviews = () => {
   //   console.log(myReviews);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/myReviews?email=${user?.email}`)
+    fetch(
+      `https://assignment-11-review-service-server.vercel.app/myReviews?email=${user?.email}`
+    )
       .then((res) => res.json())
       .then((data) => {
         // console.log(data);
@@ -28,9 +29,12 @@ const MyReviews = () => {
     const procced = window.confirm("Are you sure to delete ?");
     console.log(alert);
     if (procced) {
-      fetch(`http://localhost:5000/myReviews/${id}`, {
-        method: "DELETE",
-      })
+      fetch(
+        `https://assignment-11-review-service-server.vercel.app/myReviews/${id}`,
+        {
+          method: "DELETE",
+        }
+      )
         .then((res) => res.json())
         .then((data) => {
           //   console.log(data);

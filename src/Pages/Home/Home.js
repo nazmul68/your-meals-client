@@ -11,7 +11,7 @@ const Home = () => {
   const [limFoods, setLimFoods] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/limMeals`)
+    fetch(`https://assignment-11-review-service-server.vercel.app/limMeals`)
       .then((res) => res.json())
       .then((data) => {
         // console.log(data)

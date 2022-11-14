@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../Contexts/AuthProvider";
@@ -38,7 +37,7 @@ const AddReveiw = ({ meal }) => {
     // setReviewsById([reviews, ...reviewsById]); // use useState
 
     // POST review
-    fetch("http://localhost:5000/reviews", {
+    fetch("https://assignment-11-review-service-server.vercel.app/reviews", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -66,7 +65,9 @@ const AddReveiw = ({ meal }) => {
   };
 
   useEffect(() => {
-    fetch(`http://localhost:5000/reviewsByIds?id=${_id}`)
+    fetch(
+      `https://assignment-11-review-service-server.vercel.app/reviewsByIds?id=${_id}`
+    )
       .then((res) => res.json())
       .then((data) => {
         setReviewsById(data);
@@ -74,7 +75,7 @@ const AddReveiw = ({ meal }) => {
       .catch((e) => {
         console.log(e);
       });
-  }, [control]);
+  }, [control, _id]);
 
   return (
     <div>

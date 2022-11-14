@@ -21,7 +21,7 @@ const Login = () => {
 
     signIn(email, password)
       .then((res) => {
-        const user = res.user;
+        // const user = res.user;
         // console.log(user);
         form.reset();
         setError("");

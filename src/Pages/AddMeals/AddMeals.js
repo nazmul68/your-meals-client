@@ -27,7 +27,7 @@ const AddMeals = () => {
       description,
     };
 
-    fetch(`http://localhost:5000/postMeal`, {
+    fetch(`https://assignment-11-review-service-server.vercel.app/postMeal`, {
       method: "POST",
       headers: {
         "content-type": "application/json",

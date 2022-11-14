@@ -31,7 +31,9 @@ const router = createBrowserRouter([
         path: "/allMeals/:id",
         element: <SingleMealDetails></SingleMealDetails>,
         loader: async ({ params }) => {
-          return fetch(`http://localhost:5000/allMeals/${params.id}`);
+          return fetch(
+            `https://assignment-11-review-service-server.vercel.app/allMeals/${params.id}`
+          );
         },
       },
       {
@@ -54,7 +56,9 @@ const router = createBrowserRouter([
         path: "/update/:id",
         element: <UpdateReview></UpdateReview>,
         loader: async ({ params }) => {
-          return fetch(`http://localhost:5000/myReviews/${params.id}`);
+          return fetch(
+            `https://assignment-11-review-service-server.vercel.app/myReviews/${params.id}`
+          );
         },
       },
       {
