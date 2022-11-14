@@ -8,7 +8,7 @@ const PrivateRoute = ({ children }) => {
   const location = useLocation();
 
   if (loading) {
-    return <progress className="progress w-full"></progress>;
+    return <div className="spinner"></div>;
   }
 
   if (user) {

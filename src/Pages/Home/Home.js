@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Carosel from "./Carosel";
 import LimFoodCard from "./LimMealCard";
+import Observation from "./Observation";
+import Offer from "./Offer";
 import StorySection from "./StorySection";
 
 const Home = () => {
@@ -39,6 +41,8 @@ const Home = () => {
           See All
         </Link>
       </div>
+      <Offer></Offer>
+      <Observation></Observation>
       <StorySection></StorySection>
     </div>
   );

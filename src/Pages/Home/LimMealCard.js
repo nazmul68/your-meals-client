@@ -6,12 +6,16 @@ import { Link } from "react-router-dom";
 const LimMealCard = ({ limMeal }) => {
   const { _id, name, price, quantity, rating, image, description } = limMeal;
   return (
-    <div className="card w-96 mx-auto shadow-xl transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-110 duration-300 mb-5">
+    <div className="card w-96 mx-auto shadow-xl mb-5">
       <figure>
         {/* <img src={image} alt="food!" /> */}
         <PhotoProvider>
           <PhotoView src={image}>
-            <img src={image} alt="" />
+            <img
+              src={image}
+              alt=""
+              className="transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-110 duration-300"
+            />
           </PhotoView>
         </PhotoProvider>
       </figure>

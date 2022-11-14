@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import SingleMeal from "../SingleMeal/SingleMeal";
+import "./meals.css";
 
 const Meals = () => {
   const [meals, setMeals] = useState([]);
@@ -9,8 +10,12 @@ const Meals = () => {
       .then((res) => res.json())
       .then((data) => setMeals(data));
   }, []);
+  if (meals.length === 0) {
+    //also can use loader state
+    return <div className="spinner"></div>;
+  }
   return (
-    <div className="grid md:grid-cols-3 container mx-auto gap-3 my-10">
+    <div className=" grid md:grid-cols-3 container mx-auto gap-3 my-10 ">
       {meals.map((meal) => (
         <SingleMeal key={meal._id} meal={meal}></SingleMeal>
       ))}

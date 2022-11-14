@@ -14,7 +14,7 @@ const SingleMealDetails = () => {
           <img
             src={image ? image : notFoundImg}
             alt="Shoes"
-            className="rounded-xl w-11/12"
+            className="rounded-xl w-11/12 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
           />
         </figure>
         <div className="card-body items-center text-center">
@@ -41,6 +41,7 @@ const SingleMealDetails = () => {
           </div>
         </div>
       </div>
+
       <AddReveiw meal={meal}></AddReveiw>
     </div>
   );

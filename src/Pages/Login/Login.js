@@ -5,6 +5,7 @@ import { AuthContext } from "../../Contexts/AuthProvider";
 
 const Login = () => {
   const [error, setError] = useState("");
+  const [spinner, setSpinner] = useState(true);
   const { signIn, googleSignIn } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
@@ -24,6 +25,7 @@ const Login = () => {
         form.reset();
         setError("");
         form.reset();
+        setSpinner(false);
         navigate(from, { replace: true });
       })
       .catch((err) => {
@@ -44,6 +46,11 @@ const Login = () => {
       })
       .catch((err) => setError(err.message));
   };
+
+  if (!spinner) {
+    return <div className="spinner"></div>;
+  }
+
   return (
     <div>
       <div className="hero my-20">

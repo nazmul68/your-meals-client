@@ -10,11 +10,15 @@ const SingleMeal = ({ meal }) => {
     navigate(`/allMeals/${_id}`);
   };
   return (
-    <div className="card w-96 mx-auto shadow-xl transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-110 duration-300 mb-5">
+    <div className="card w-96 mx-auto shadow-xl  mb-5">
       <figure>
         <PhotoProvider>
           <PhotoView src={image}>
-            <img src={image} alt="" />
+            <img
+              src={image}
+              alt=""
+              className="transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-110 duration-300"
+            />
           </PhotoView>
         </PhotoProvider>
       </figure>
