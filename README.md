@@ -1,70 +1,32 @@
-# Getting Started with Create React App
+### Project Name
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Your Meals
 
-## Available Scripts
+### Visit This Site
 
-In the project directory, you can run:
+live site: (https://your-meals-2d0c3.firebaseapp.com/)
 
-### `yarn start`
+### Features of this site
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+\* First of all, YourMeals looks much fancy & fully responsive on desktop, tab & mobile view.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+\* Some important features added on this site like #AddReviews, #EditReviews, #DeleteReviews #AddMeals, ,A fancy #ErrorPage etc. And also has A fancy look #Navbar & complex #footer as well.
 
-### `yarn test`
+\* You can see #MealsDetails page , this page has details information about a Meal.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Functionality
 
-### `yarn build`
+\* All meals data & information are loaded dynamically from Database (MongoDb)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+\* YourMeals has 2 types of login systems Email & password login, Google login. The login page has a toggle option to go to the register page.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+\* YourMeals has some private/protected route whereas the user cannot enter without registration.
+And ensuring that the private route redirects to the login page.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+\* #MyReviews Page has special funcionality , whereas user can edit or delete his/her own review
 
-### `yarn eject`
+\* "Active route" to indicating the route which you are visiting..
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### technologies
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+\* React & React router dom. \* MongoDb. \* TailWind CSS \* DaisiUI & Components. \* Firebase authentication & hosting. \* Varcel hosting for server side. \* React Icons. \*React Hot Toast. \* Sweet alert 2. \* react-reveal \* react-helmet \* React Photo View package etc.

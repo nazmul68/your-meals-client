@@ -62,7 +62,7 @@ const Observation = () => {
           </svg>
         </div>
         <div className="stat-title font-bold">Total Reviews</div>
-        <div className="stat-value text-secondary">1K</div>
+        <div className="stat-value text-blue-500">1K</div>
         <div className="stat-desc">5% more than last month</div>
       </div>
     </div>

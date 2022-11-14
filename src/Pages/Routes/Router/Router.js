@@ -1,12 +1,12 @@
 import Main from "../../../Layouts/Main";
 import AddMeals from "../../AddMeals/AddMeals";
 import Blog from "../../Blog/Blog";
+import ErrorPage from "../../ErrorPage/ErrorPage";
 import Home from "../../Home/Home";
 import Login from "../../Login/Login";
 import Meals from "../../Meals/Meals";
 import MyReviews from "../../MyReviews/MyReviews";
 import Signup from "../../Signup/Signup";
-import SingleMeal from "../../SingleMeal/SingleMeal";
 import SingleMealDetails from "../../SingleMealDetails/SingleMealDetails";
 import UpdateReview from "../../UpdateReview/UpdateReview";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
@@ -17,6 +17,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",

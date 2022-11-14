@@ -16,7 +16,7 @@ const Offer = () => {
     });
   };
   return (
-    <div className="container w-11/12 mx-auto md:flex my-20 items-center bg-base-300 p-5 rounded-2xl">
+    <div className="container w-11/12 mx-auto md:flex my-20 items-center bg-base-200 p-5 rounded-2xl">
       <div className="img-div md:w-2/3 mx-auto relative mb-20">
         <img
           src={fridRiceImg}

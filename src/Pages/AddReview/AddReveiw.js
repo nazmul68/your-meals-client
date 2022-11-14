@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../Contexts/AuthProvider";
@@ -82,7 +83,7 @@ const AddReveiw = ({ meal }) => {
           <div className="text-center font-bold text-orange-600 text-4xl">
             <h2>Add Your Review</h2>
           </div>
-          <div className="flex justify-center  space-x-3 bg-base-200 w-4/5 mx-auto mt-5 rounded-xl py-5">
+          <div className="flex justify-center space-x-3 bg-cyan-100 w-4/5 mx-auto mt-5 rounded-xl py-5">
             <div className="md:px-40 ">
               <h2 className="font-bold">{user?.displayName}</h2>
             </div>
@@ -120,6 +121,7 @@ const AddReveiw = ({ meal }) => {
                 className="textarea textarea-success w-full my-5 py-10"
                 placeholder="Your Review"
                 name="review"
+                required
               ></textarea>
               <br />
               <input

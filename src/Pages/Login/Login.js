@@ -1,4 +1,5 @@
 import React, { useContext, useState } from "react";
+import { Helmet } from "react-helmet";
 import { FaGoogle } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Contexts/AuthProvider";
@@ -53,6 +54,9 @@ const Login = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Login</title>
+      </Helmet>
       <div className="hero my-20">
         <div className="hero-content ">
           <div className="card flex-shrink-0 w-full max-w-xl mx-auto shadow-2xl bg-base-100 py-10 px-20">

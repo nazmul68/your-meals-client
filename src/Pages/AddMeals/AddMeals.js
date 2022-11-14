@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
@@ -52,6 +53,9 @@ const AddMeals = () => {
 
   return (
     <form onSubmit={handleAddMeal}>
+      <Helmet>
+        <title>AddMeal</title>
+      </Helmet>
       <div className="bg-base-200 w-5/6 mx-auto my-10 p-8 pb-10 rounded-md">
         <div className="text-center font-bold text-orange-600 text-3xl">
           <h2>Add Meal!</h2>

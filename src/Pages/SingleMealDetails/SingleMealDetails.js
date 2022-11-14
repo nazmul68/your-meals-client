@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import { useLoaderData } from "react-router-dom";
 import notFoundImg from "../../assets/notFoundImg.jpg";
 import AddReveiw from "../AddReview/AddReveiw";
@@ -9,6 +10,9 @@ const SingleMealDetails = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>MealDetails</title>
+      </Helmet>
       <div className="card w-4/5 mx-auto bg-base-200 shadow-xl mb-20">
         <figure className="px-10 pt-10">
           <img

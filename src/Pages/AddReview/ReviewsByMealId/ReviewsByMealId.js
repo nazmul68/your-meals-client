@@ -4,7 +4,8 @@ import { AuthContext } from "../../../Contexts/AuthProvider";
 const ReviewsByMealId = ({ reviewById }) => {
   //   console.log(reviewById);
   const { user } = useContext(AuthContext);
-  const { mealId, image, name, userImage, review, userEmail } = reviewById;
+  const userImage = user?.photoURL;
+  const { mealId, image, name, review, userEmail } = reviewById;
 
   return (
     <section>

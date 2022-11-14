@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import { PhotoProvider, PhotoView } from "react-photo-view";
 import { useNavigate } from "react-router-dom";
 
@@ -11,6 +12,9 @@ const SingleMeal = ({ meal }) => {
   };
   return (
     <div className="card w-96 mx-auto shadow-xl  mb-5">
+      <Helmet>
+        <title>Meals</title>
+      </Helmet>
       <figure>
         <PhotoProvider>
           <PhotoView src={image}>

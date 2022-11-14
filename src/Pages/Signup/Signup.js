@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Contexts/AuthProvider";
 import { FaGoogle } from "react-icons/fa";
+import { Helmet } from "react-helmet";
 
 const Signup = () => {
   const [error, setError] = useState("");
@@ -46,6 +47,9 @@ const Signup = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Sign up</title>
+      </Helmet>
       <div className="hero my-20">
         <div className="hero-content ">
           <div className="card flex-shrink-0 w-full max-w-xl mx-auto shadow-2xl bg-base-100 py-10 px-20">

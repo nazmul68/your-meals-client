@@ -1,5 +1,6 @@
 import { data } from "autoprefixer";
 import React, { useContext, useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../Contexts/AuthProvider";
 import MyReviewRow from "./MyReviewRow";
@@ -53,6 +54,9 @@ const MyReviews = () => {
   } else if (myReviews.length) {
     return (
       <div>
+        <Helmet>
+          <title>MyReviews</title>
+        </Helmet>
         <div className="text-center font-bold text-orange-600 text-3xl">
           <h2>All Your Reviews Here!</h2>
         </div>
@@ -71,6 +75,9 @@ const MyReviews = () => {
       className="flex justify-center items-center font-bold text-orange-600 text-4xl mb-16"
       style={{ height: "50vh" }}
     >
+      <Helmet>
+        <title>MyReviews</title>
+      </Helmet>
       <h2>No reviews were added!</h2>
     </div>
   );

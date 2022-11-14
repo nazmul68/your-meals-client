@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import Carosel from "./Carosel";
 import LimFoodCard from "./LimMealCard";
@@ -23,6 +24,9 @@ const Home = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>YourMeals</title>
+      </Helmet>
       <Carosel></Carosel>
       <div>
         <h2 className="font-bold text-3xl text-orange-600  hover:text-orange-700 rounded-tr-none rounded-bl-none mb-5 mt-12 btn btn-ghost btn-active normal-case">

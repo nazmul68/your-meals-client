@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 import SingleMeal from "../SingleMeal/SingleMeal";
 import "./meals.css";
 
@@ -16,6 +17,9 @@ const Meals = () => {
   }
   return (
     <div className=" grid md:grid-cols-3 container mx-auto gap-3 my-10 ">
+      <Helmet>
+        <title>Meals</title>
+      </Helmet>
       {meals.map((meal) => (
         <SingleMeal key={meal._id} meal={meal}></SingleMeal>
       ))}
