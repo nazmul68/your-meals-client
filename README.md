@@ -4,7 +4,7 @@ Your Meals
 
 ### Visit This Site
 
-live site: (https://your-meals-2d0c3.firebaseapp.com/)
+live site: (https://your-meals-2d0c3.firebaseapp.com)
 
 server side code : (https://github.com/nazmul68/your-meals-server)
 
